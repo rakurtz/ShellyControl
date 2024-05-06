@@ -1,0 +1,9 @@
+.flex_container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: auto;
+  padding-top: 15px;
+  justify-content: center;
+  gap: 15px;
+}

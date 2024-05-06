@@ -1,0 +1,39 @@
+[package]
+name = "shelly-actix-api"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+path = "src/main.rs"
+name = "shelly-actix-api"
+
+
+[dependencies]
+actix-web = "4"
+actix-cors = "0.6.5"
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+tokio-stream = "0.1"
+serde = { version = "1.0", features = ["derive"] }
+reqwest = { version = "0.11", features = ["json"] }
+serde_json = "1.0"
+serde_yaml = "0.9"
+select = "0.5"
+scraper = "0.18"
+regex = "1"
+chrono ="0.4"
+dotenvy = "0.15"
+# openweather_sdk = { path = "../../openweather_sdk_fork" }
+openweather_sdk = "0.1.5"
+anyhow = "1.0.80"
+rusqlite = { version = "0.31.0", features = ["bundled"] }
+
+
+
+
+[dev-dependencies]
+reqwest = "0.11"

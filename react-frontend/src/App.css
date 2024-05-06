@@ -1,0 +1,26 @@
+.App {
+  text-align: center;
+  height: 100%;
+  user-select: none;
+  position: relative;
+}
+
+/* just add some margin on small screens */
+@media screen and (max-width: 1000px) {
+  .global-off {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .bottom_space {
+    margin-bottom: 150px;
+  }
+}
+
+h2 {
+  color: #4b958a;
+}
+
+h5 {
+  color: #4b9s4a;
+}

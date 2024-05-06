@@ -1,0 +1,17 @@
+.bottom_fabs {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 18px;
+    left: 10px;
+    gap: 20px;
+    width: 95%;
+  }
+
+  .bottom_fabs_grp {
+    display: flex;
+    gap: 16px;
+    flex-wrap: nowrap;
+
+  }

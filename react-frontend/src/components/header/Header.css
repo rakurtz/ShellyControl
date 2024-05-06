@@ -1,0 +1,19 @@
+.header-background {
+  width: 100%;
+  margin-top: 0px;
+}
+
+.Header {
+    margin-top: 0px;
+    background-color: #142652;
+    color: #43877C;
+    max-width: 800px;
+    margin: 0px auto;
+    padding: 0px 20px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #777;
+  }
+  
+ 

@@ -1,0 +1,47 @@
+
+.slidecontainer {
+    width: 100%; /* Width of the outside container */
+  }
+  
+  /* The slider itself */
+  .slider {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 100%; /* Full-width */
+    height: 25px; /* Specified height */
+    background: #d4e3de; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.9;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    
+    -webkit-appearance: none;  /*Override default CSS styles */
+    appearance: none;
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+    z-index: 10;
+  }
+  
+  
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */ 
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #3c7c72; /* Green background */
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    
+    cursor: pointer; /* Cursor on hover */
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #3c7c72; /* Green background */
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    cursor: pointer; /* Cursor on hover */
+  }

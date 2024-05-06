@@ -1,0 +1,8 @@
+.clock > p {
+    margin-bottom: 3px;
+}
+
+.clock > h3 {
+    margin-top: 3px;
+    margin-bottom: 8px;
+}

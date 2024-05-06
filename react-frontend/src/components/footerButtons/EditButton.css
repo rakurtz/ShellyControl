@@ -1,0 +1,10 @@
+.save_or_cancel_inner {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #bac4d2ae;
+    padding: 15px;
+    border: 1 black solid;
+    border-radius: 25px;
+    overflow: hidden;
+}

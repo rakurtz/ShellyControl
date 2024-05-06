@@ -1,0 +1,15 @@
+.main_container {
+    display: flex;
+    flex-wrap: wrap;
+    place-items: center;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0px auto;
+    width: 100vw;
+    height: 65vh; 
+  }
+
+  .loading > h3 {
+    color: #43877C;
+    font-weight: 400;
+  }

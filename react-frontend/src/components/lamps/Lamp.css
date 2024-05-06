@@ -1,0 +1,44 @@
+
+.Lamps-Single {
+  width: 100px;
+  background-color: #7d8aab;
+  position: relative;
+  border: none;
+  color: #b4bdd1;
+  font-weight: 600;
+  padding: 35px 15px 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 18px;
+  box-shadow: 0 0px 12px 0 rgba(0,0,0,0.24), 0 0px 20px 0 rgba(0,0,0,0.19);
+}
+
+@media screen and (max-width: 400px) {
+  .Lamps-Single{
+    width: 135px;
+  }
+}
+
+.Lamps-Single-pressed {
+  background-color: #303e63;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.Lamps-Single-off {
+  background-color: #475987;
+}
+
+.Lamps-Single > p {
+  font-weight: 900;
+  font-size: 20px;
+  margin: 15px auto 15px auto;
+}
+
+p.brightness-color-disabled {
+  color: #4b958a;
+}
+
+p.brightness-color-show {
+  color: #2c635c;
+}
