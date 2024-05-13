@@ -32,10 +32,9 @@ impl FrontendWeather {
     pub async fn update(&mut self) -> Result<()> {
         let mut weather_sdk = WeatherSDK::new()?; 
         weather_sdk.update().await?;
-
+        println!("After update()");
         self.current = FrontendWeatherCurrent::new(&weather_sdk.current.unwrap());
-        self.forecast = FrontendWeatherForecast::new(&weather_sdk.forecast.unwrap()); // todo: implement forecast::new() and add here
-        
+        self.forecast = FrontendWeatherForecast::new(&weather_sdk.forecast.unwrap());
         Ok(())
     }
 
@@ -146,6 +145,7 @@ impl WeatherSDK {
             Units::Metric,
             Language::German
         );
+        
         let lat = std::env::var("OPENWEATHER_LAT")?
                 .parse::<f64>()?;
 
@@ -178,10 +178,9 @@ impl WeatherSDK {
                                                                         self.retrieve_current(), 
                                                                         self.retrieve_forecast()
                                                                     );
-
+        
         self.current = Some(current?);
         self.forecast = Some(forecast?);
-        
         Ok(())
     }
 

@@ -9,7 +9,7 @@ services:
       - "--entrypoints.web.address=:80"
     ports:
       - "80:80"     # adjust the first number to specify the local port 
-#      - "8080:8080"  # Uncomment to expose Traefik dashboard
+      # - "8080:8080"  # Uncomment to expose Traefik dashboard
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
     networks:
@@ -22,9 +22,11 @@ services:
       - "traefik.http.routers.frontend.rule=Host(`localhost`) && PathPrefix(`/`)"
       - "traefik.http.routers.frontend.entrypoints=web"
       - "traefik.http.services.frontend.loadbalancer.server.port=4000"
+    env_file:
+      - configuration.env
     networks:
       - web
-
+    
   backend:
     build: ./rust-backend/
     labels:
@@ -34,8 +36,13 @@ services:
       - "traefik.http.services.backend.loadbalancer.server.port=3000"
       - "traefik.http.middlewares.api-stripprefix.stripprefix.prefixes=/api"
       - "traefik.http.routers.backend.middlewares=api-stripprefix"
+    volumes:
+      - ./my_shellies_and_lamps.yaml:/app/my_shellies_and_lamps.yaml
+    env_file:
+      - configuration.env
     networks:
       - web
+
 
 networks:
   web:

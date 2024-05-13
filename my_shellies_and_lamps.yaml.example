@@ -1,0 +1,36 @@
+shellies:
+- id: 0
+  ip: 192.168.0.214
+  device_name: some_room
+- id: 1
+  ip: 192.168.0.236
+  device_name: another_room
+  
+lamps:
+- id: 0
+  name: some_lamp_in_some_room
+  members:
+  - device_id: 0
+    lane: 0
+  - device_id: 0
+    lane: 1
+- id: 1
+  name: another_lamp_in_another_room
+  members:
+  - device_id: 1
+    lane: 0
+  - device_id: 1
+    lane: 1
+  - device_id: 1
+    lane: 2
+- id: 2
+  name: a_mixed_room_lamp
+  members:
+  - device_id: 1
+    lane: 0
+  - device_id: 1
+    lane: 1
+  - device_id: 0
+    lane: 0
+  - device_id: 0
+    lane: 2

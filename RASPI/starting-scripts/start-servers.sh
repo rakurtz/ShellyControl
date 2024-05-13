@@ -2,9 +2,9 @@
 
 ### display & screensaver
 export DISPLAY=:0
-sudo sh -c 'echo 30 > /sys/class/backlight/10-0045/device/backlight/10-0045/brightness'
+sudo sh -c 'echo 30 > /sys/class/backlight/10-0045/device/backlight/10-0045/brightness' # backlight brightness (max 100)
 xset s 60       # in seconds (motion sensor kind of overrides this anyway. 
-                #Should be longer than the interval coming from sensor
+                # Should be longer than the interval coming from sensor
 
 
 ### tmux layout

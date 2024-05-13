@@ -7,6 +7,7 @@ use actix_cors::Cors;
 use actix_web::dev::Server;
 use actix_web::{web, App, HttpServer};
 use std::net::TcpListener;
+use std::num::IntErrorKind;
 use std::sync::Arc;
 use tokio::sync::Mutex;
 use std::time::Duration;
@@ -19,7 +20,7 @@ use routes::weather_routes;
 use devices::lamps::Lamps;
 use devices::shellies::Shellies;
 use information::weather::FrontendWeather;
-
+ 
 
 struct ActixAppState {
     pub shellies: Mutex<Shellies>,
@@ -32,11 +33,11 @@ async fn weather_loop(weather: Arc<Mutex<FrontendWeather>>) {
         .expect("Error in .env: WEATHER_UPDATE_INTERVAL not found")
         .parse::<u64>()
         .expect("Error in .env ");
-
-        loop {
-            let _ = weather.lock().await.update().await;
-            sleep(Duration::from_secs(interval)).await;
-        }
+    
+    loop {
+        let _ = weather.lock().await.update().await;
+        sleep(Duration::from_secs(interval)).await;
+    }
 
 }
 
@@ -48,7 +49,16 @@ pub fn run_webserver(
     ) -> Result<Server, std::io::Error> {
 
     let frontend_weather_mutex = Arc::new(Mutex::new(frontend_weather));
-    tokio::spawn(weather_loop(frontend_weather_mutex.clone()));
+    
+    // only start the openweather retrievement loop unless not disabled via environment variable
+    match std::env::var("DISABLE_WEATHER_RETRIEVEMENT") {
+        Ok(disable_weather_retrievement) if disable_weather_retrievement.to_lowercase() == "true" => {
+            println!("Found DISABLE_WEATHER_RETRIEVEMENT=true. Not retrieving information from api.openweather.org");
+        }
+        _ => {
+            tokio::spawn(weather_loop(frontend_weather_mutex.clone()));
+        } 
+    }
 
     let actix_app_state = web::Data::new(ActixAppState {
         shellies: Mutex::new(shellies),

@@ -34,7 +34,7 @@ pub struct FromConfig {
 impl FromConfig {
     pub fn read_config_shellies() -> Result<Self, Box<dyn std::error::Error>> {
         let path = std::env::var("CONFIG_FILE")
-            .expect("Error in .env: CONFIG_FILE not found");
+            .expect("Error in environment variables: CONFIG_FILE not found (check compose.yaml)");
     
         let f = OpenOptions::new()
             .read(true)
@@ -59,7 +59,7 @@ impl FromConfig {
     pub fn write_to_yaml(&self) -> Result<(), Box<dyn std::error::Error>> {
 
         let path = std::env::var("CONFIG_FILE")
-        .expect("Error in .env: CONFIG_FILE not found");
+        .expect("Error in environment variables: CONFIG_FILE not found (check compose.yaml)");
 
         let f = std::fs::OpenOptions::new()
             .write(true)
