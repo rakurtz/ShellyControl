@@ -29,7 +29,7 @@ depending on your choice you can clone the whole repository or just get the `com
 `my_shellies_and_lamps.yaml.example` files and copy them to a folder on your device.
 Make sure to rename the `.example` files by removing the `.example`.
 
-## Get an openweather api key here
+### Get an openweather api key here
 https://openweathermap.org/price  --> free plan!
 https://home.openweathermap.org/users/sign_up
 
