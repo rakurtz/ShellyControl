@@ -16,7 +16,7 @@ services:
       - web
   
   frontend:
-    image: rakurtz/shellycontrol-frontend:latest
+    build: ./react-frontend/
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.frontend.rule=PathPrefix(`/`)"
@@ -28,7 +28,7 @@ services:
       - web
     
   backend:
-    image: rakurtz/shellycontrol-backend:latest
+    build: ./rust-backend/
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.backend.rule=PathPrefix(`/api`)"

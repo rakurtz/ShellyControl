@@ -19,7 +19,6 @@ RUN cargo build --release
 FROM debian:latest AS runtime
 RUN apt-get update && apt-get install -y openssl libssl-dev ca-certificates && rm -rf /var/lib/apt/lists/*
 WORKDIR /app
-#COPY /*.yaml /app
 COPY --from=builder /app/target/release/shelly-actix-api /app
 EXPOSE 3000
 CMD ["/app/shelly-actix-api"]

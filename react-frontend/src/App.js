@@ -13,7 +13,6 @@ import Loading from './components/tools/Loading';
 import FooterButtonsContainer from './components/footerButtons/FooterButtonsContainer';
 
 // export
-// export const backendUrl = `${process.env.REACT_APP_API_SERVER}`
 export const backendUrl = window.location.origin + "/api"
 export const reloadMilliSeconds = 20000 //`${process.env.PERIODICAL_RELOAD_SECONDS}` * 1000
 
