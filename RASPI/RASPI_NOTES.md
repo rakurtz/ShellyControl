@@ -34,3 +34,7 @@ Good instructions on setting up a Raspberry for Kiosk Mode Chromium
 [https://werner.rothschopf.net/201501_raspberry_kioskmode.htm]
 
 `chromium-browser --noerrdialogs --disable-translate --kiosk --incognito http://whereyouwannago.com`
+
+## Purpose of the start-scripts
+put the start scripts on your desktop and adjust the path to the motion sensor python script. This way you can easily start the 
+motionsensor and the chromium kiosk mode manually from you touch screen on reboot.

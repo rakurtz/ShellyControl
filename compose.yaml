@@ -14,6 +14,7 @@ services:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
     networks:
       - web
+    restart: always
   
   frontend:
     image: rakurtz/shellycontrol-frontend:latest
@@ -26,6 +27,7 @@ services:
       - configuration.env
     networks:
       - web
+    restart: always
     
   backend:
     image: rakurtz/shellycontrol-backend:latest
@@ -42,6 +44,7 @@ services:
       - configuration.env
     networks:
       - web
+    restart: always
 
 
 networks:

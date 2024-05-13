@@ -7,20 +7,23 @@ served in your local network via Docker containers (leveraging Treafik as a fine
 
 
 ## Steps to run the ShellyControl via Docker
-### adjust compose.yaml to your HOST
-in `./traefik-proxy/config.yaml` adjust thes lines to the domain you want the Shelly Control to be accessible from 
-`"traefik.http.routers.frontend.rule=Host(`INSERT_YOUR_HOST_HERE`) && PathPrefix(`/`)"` 
-and
-`"traefik.http.routers.backend.rule=Host(`INSERT_YOUR_HOST_HERE`) && PathPrefix(`/api`)"` 
+### install docker
+take a look at the docker.io website for installation guides [[https://docs.docker.com/get-docker/]]
 
-You may also adjust the port, the react frontend is exposed to your local network. Default is `80`.
+### configure docker to restart containers after reboot (linux):
+```
+sudo systemctl enable docker
+```
+
+### adjust compose.yaml to your needs
+You may want to adjust the port, the react frontend is exposed to your local network. Default is `80`.
 
 
 ### run docker compose
 ```
-docker network create web 
-docker compose up -d --build
+docker compose up -d
 ```
 
 ### visit website
 open "http://your-host" 
+(maybe adjust the port to what you have specified in the traefik service)
