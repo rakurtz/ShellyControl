@@ -6,7 +6,6 @@ served in your local network via Docker containers (leveraging Treafik as a fine
 
 ## What it looks like
 ![plot](./readme_ressources/view_wide_screen.png)
-![screenshot](./readme_ressources/view_wide_screen.png)
 ![plot](./readme_ressources/mobile_main_screen.png)
 ![plot](./readme_ressources/mobile_config_screen.png)
 ![plot](./readme_ressources/mobile_weather_screen.png)
