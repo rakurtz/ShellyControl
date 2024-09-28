@@ -53,3 +53,15 @@ open "http://your-host"
 (maybe adjust the port to what you have specified in the traefik service)
 
 add your shellies and configure your lamps in the settings section (the gear symbol down left)
+
+
+
+__________________
+
+## a hint on building multi-arch docker files and pushing them to docker hub:
+relies on docker buildx
+and `docker login` needs to be sucessful
+```
+# inside rust-backend/
+docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t rakurtz/shellycontrol-backend:latest --push .
+```
